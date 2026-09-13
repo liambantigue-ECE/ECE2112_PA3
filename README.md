@@ -1,2 +1,28 @@
 # ECE2112_PA3
-EXPERIMENT 3: PYTHON DATA ANALYSIS (PANDAS)
+Liam S. Bantigue | 2ECE-A
+# EXPERIMENT 3: PYTHON DATA ANALYSIS (PANDAS)
+## A. POSITIONAL AND LABEL-BASED SLICING
+The problem instructs us to display the shape and complete list of column names of cars, to use positional slicing, create cars 6 to 10 containing rows 6 through 10 of the dataset, where the first data row is row 1, and to from cars 6 to 10, display only the columns Model, mpg, cyl, hp, and gear, in that order.
+
+First, to display the shape of the cars, we use the .shape() function that we learned in numpy, the shape is 32 rows and 12 columns. We then display the list of column names using the .columns function to retrieve the column names of the dataframe. After that we enclose them into the list() function.<br>
+<img width="347" height="430" alt="image" src="https://github.com/user-attachments/assets/ce62d12a-cfad-4745-8336-a9a7db5b7c9d" /><br>
+
+Second, we need to get row 6 - 10 from the dataframe with select column names. To start, we use the variable name _cars_6_to_10_ to assign the function _cars.iloc[]_. This function has the parameters of row index 5 until 10 but not including 10. We use index 5 because PANDAS use 0-based indexing. Now, we use the variable name _column_label_ to have only select column names, we create a column label where all the select columns are enclosed in brackets. Lastly, we connect cars_6_to_10 and column_label together with the latter enclosed in brackets and display them.<br>
+<img width="573" height="430" alt="image" src="https://github.com/user-attachments/assets/6539d055-5d59-4f78-9aea-2f883249d3f6" />
+
+## B. MODEL LOOKUP
+The problem instructs us to use Boolean indexing on the Model column, to display the complete row for Toyota Corolla, and For Pontiac Firebird, display only Model, mpg, hp, and wt.
+
+First, we need to recall our previous PA because that is where we learned how to use Boolean. remember the syntax is that the variable outside means we get the value that is TRUE from the conditions bracketed. the condition is in column name "Model" find the value equal to == "Toyota Corolla". <br>
+
+Second, just like in problem A, we collect the select column names in a bracket and them assign them to variable column_label. We then use the boolean indexing again assigned to variable name pontiac but now for the value equal to == "Pontiac Firebird". We connect pontiac and column_label together with the latter enclosed in brackets and display them. <br>
+<img width="889" height="423" alt="image" src="https://github.com/user-attachments/assets/1f036122-1c34-4661-bb4c-d81a73e1b9a6" />
+
+## C. MULTI-MODEL SUBSETTING
+The problem instructs us to create a DataFrame named selected cars containing only the records for three models: Datsun 710,
+Lotus Europa, and Ferrari Dino. Select the rows by their model values rather than by row numbers. Display selected cars and its shape. For these records, retain only Model, mpg, cyl, hp, and gear.
+
+At first I used slicing but as I was typing this READme file I reread the problem and it said to CREATE A DATAFRAME. So, I used the pd.DataFrame() function. To get the data of our DataFrame named selected_cars, instead of typing them manually, we can use the Boolean indexing we just learned to set conditions that automatically gets the required values. The syntax is it gets all TRUE cars values that is equal to the models Datsun 710, Lotus Europa, and Ferrari Dino, since we have multiple values we can use the .isin() function instead of typing multiple OR | in the condition. We then only get the select columns by having values of column names assigned to Model, mpg, cyl, hp, and gear. 
+
+Lastly, we display selected_cars and its shape.<br>
+<img width="1631" height="352" alt="image" src="https://github.com/user-attachments/assets/6bf8daa0-56ff-45f3-a2d8-92596f5d5312" />
