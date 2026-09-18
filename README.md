@@ -4,11 +4,10 @@ Liam S. Bantigue | 2ECE-A
 ## A. POSITIONAL AND LABEL-BASED SLICING
 The problem instructs us to display the shape and complete list of column names of cars, to use positional slicing, create cars 6 to 10 containing rows 6 through 10 of the dataset, where the first data row is row 1, and to from cars 6 to 10, display only the columns Model, mpg, cyl, hp, and gear, in that order.
 
-First, to display the shape of the cars, we use the .shape() function that we learned in numpy, the shape is 32 rows and 12 columns. We then display the list of column names using the .columns function to retrieve the column names of the dataframe. After that we enclose them into the list() function.<br>
-<img width="347" height="430" alt="image" src="https://github.com/user-attachments/assets/ce62d12a-cfad-4745-8336-a9a7db5b7c9d" /><br>
+First, to display the shape of the cars, we use the .shape() function that we learned in numpy, the shape is 32 rows and 12 columns. We then display the list of column names using the .columns function to retrieve the column names of the dataframe and then also attach .tolist() function to have a cleaner output compared to the "normal" list() function. <br>
 
-Second, we need to get row 6 - 10 from the dataframe with select column names. To start, we use the variable name _cars_6_to_10_ to assign the function _cars.iloc[]_. This function has the parameters of row index 5 until 10 but not including 10. We use index 5 because PANDAS use 0-based indexing. Now, we use the variable name _column_label_ to have only select column names, we create a column label where all the select columns are enclosed in brackets. Lastly, we connect cars_6_to_10 and column_label together with the latter enclosed in brackets and display them.<br>
-<img width="573" height="430" alt="image" src="https://github.com/user-attachments/assets/6539d055-5d59-4f78-9aea-2f883249d3f6" />
+Second, we need to get row 6 - 10 from the dataframe with select column names. To start, we use the variable name _cars_6_to_10_ to assign the function _cars.iloc[]_. This function has the parameters of row index 5 until 10 but not including 10. We use index 5 because PANDAS use 0-based indexing. Now, we use the variable name _column_label_ to have only select column names, we create a column label where all the select columns are enclosed in brackets. Lastly, we assign cars_6_to_10 to a connected cars_6_to_10 and column_label together to ensure cars_6_to_10 only has the specified columns and then display them.<br>
+<img width="1362" height="651" alt="image" src="https://github.com/user-attachments/assets/f75e958c-3355-41e0-9582-ad5ffcd6f3b6" /><br>
 
 ## B. MODEL LOOKUP
 The problem instructs us to use Boolean indexing on the Model column, to display the complete row for Toyota Corolla, and For Pontiac Firebird, display only Model, mpg, hp, and wt.
@@ -16,7 +15,9 @@ The problem instructs us to use Boolean indexing on the Model column, to display
 First, we need to recall our previous PA because that is where we learned how to use Boolean. remember the syntax is that the variable outside means we get the value that is TRUE from the conditions bracketed. the condition is in column name "Model" find the value equal to == "Toyota Corolla". <br>
 
 Second, just like in problem A, we collect the select column names in a bracket and them assign them to variable column_label. We then use the boolean indexing again assigned to variable name pontiac but now for the value equal to == "Pontiac Firebird". We connect pontiac and column_label together with the latter enclosed in brackets and display them. <br>
-<img width="889" height="423" alt="image" src="https://github.com/user-attachments/assets/1f036122-1c34-4661-bb4c-d81a73e1b9a6" />
+<img width="885" height="544" alt="image" src="https://github.com/user-attachments/assets/a927d11d-2de2-48f3-9492-c23deb36b2c8" />
+
+
 
 ## C. MULTI-MODEL SUBSETTING
 The problem instructs us to create a DataFrame named selected cars containing only the records for three models: Datsun 710,
